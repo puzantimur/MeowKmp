@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Meow</string>
+    <string name="login_view_welocome_back">Welcome back!</string>
     <string name="login_view_create_account_main_title">Create an Account</string>
     <string name="login_view_phone_number_hint">Phone number</string>
     <string name="login_view_password_hint">Password</string>
     <string name="login_view_button_confirm_text">Confirm</string>
+    <string name="login_view_sign_up">Sign Up</string>
 </resources>

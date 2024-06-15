@@ -9,16 +9,27 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import meow.laser.com.features.catalog.CatalogScreen
 import meow.laser.com.features.detail.DetailScreen
-import meow.laser.com.features.login.LoginScreen
+import meow.laser.com.features.login.di.loginModule
+import meow.laser.com.features.login.ui.LoginScreen
 import meow.laser.com.features.profile.ProfileScreen
 import meow.laser.com.navigation.AppScreen
 import meow.laser.com.navigation.LocalNavHost
 import meow.laser.com.navigation.main.MainScreen
 import meow.laser.com.theme.MeowTheme
+import org.koin.compose.KoinApplication
 
 
 @Composable
 internal fun App() = MeowTheme {
+    KoinApplication(application = {
+        modules(
+            loginModule(),
+
+        )
+
+    }) {
+
+    }
     MeowApp()
 }
 

@@ -1,7 +1,9 @@
 package meow.laser.com.base
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 import meow.laser.com.tea.StateHandler
 
 abstract class BaseViewModel<in State : Any, Msg : Any, out UiState: Any>(
@@ -10,8 +12,10 @@ abstract class BaseViewModel<in State : Any, Msg : Any, out UiState: Any>(
     
     abstract val uiState: Flow<UiState>
            
-    suspend fun sendMsg(msg: Msg) {
-        stateHandler.handle(msg)
+    fun sendMsg(msg: Msg) {
+        viewModelScope.launch {
+            stateHandler.handle(msg)
+        }
     }
     
     abstract fun mapState(state: State): UiState

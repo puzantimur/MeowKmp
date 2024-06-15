@@ -1,7 +1,7 @@
 package meow.laser.com.features.login.tea.handlers
 
 import meow.laser.com.features.login.LoginEffect
-import meow.laser.com.features.login.LoginState
+import meow.laser.com.features.login.tea.state.LoginState
 import meow.laser.com.features.login.tea.logger.LoginStateHandlerLogger
 import meow.laser.com.features.login.tea.msg.LoginMsg
 import meow.laser.com.features.login.tea.reducer.LoginReducer

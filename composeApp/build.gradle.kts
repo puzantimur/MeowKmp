@@ -64,7 +64,9 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.multiplatformSettings)
             implementation(libs.koin.core)
-            
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+
             implementation(libs.compose.navigation)
             implementation(libs.compose.viewmodel)
         }
@@ -81,6 +83,7 @@ kotlin {
             implementation(libs.androidx.activityCompose)
             implementation(libs.kotlinx.coroutines.android)
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.koin.android)
         }
 
         iosMain.dependencies {

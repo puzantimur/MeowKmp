@@ -4,9 +4,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.map
 import meow.laser.com.base.BaseViewModel
-import meow.laser.com.features.login.LoginState
+import meow.laser.com.features.login.tea.state.LoginState
 import meow.laser.com.features.login.tea.handlers.LoginStateHandler
 import meow.laser.com.features.login.tea.msg.LoginMsg
+import meow.laser.com.features.login.tea.state.LoginState.Progress.InputDataState
 
 internal class LoginViewModel(
     private val stateHandler: LoginStateHandler
@@ -19,7 +20,13 @@ internal class LoginViewModel(
             .map(::mapState)
 
     override fun mapState(state: LoginState): LoginUiState {
-        return LoginUiState()
+        return when(state) {
+            LoginState.None -> LoginUiState()
+            is InputDataState -> LoginUiState(
+                password = state.password,
+                phoneNumber = state.phone,
+            )
+        }
     }
 }
 

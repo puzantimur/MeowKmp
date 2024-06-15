@@ -10,7 +10,7 @@ internal interface LoginEffectHandler : EffectHandler<LoginEffect, LoginMsg>
 internal class LoginEffectHandlerImpl : LoginEffectHandler {
     
     override suspend fun invoke(effect: LoginEffect, dispatch: Dispatch<LoginMsg>) {
-        TODO("Not yet implemented")
+        
     }
 
 }
