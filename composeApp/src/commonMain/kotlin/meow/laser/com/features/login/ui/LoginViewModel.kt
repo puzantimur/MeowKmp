@@ -13,6 +13,10 @@ internal class LoginViewModel(
     private val stateHandler: LoginStateHandler
 ) : BaseViewModel<LoginState, LoginMsg, LoginUiState>(stateHandler) {
     
+    init {
+        sendMsg(LoginMsg.StartAuth)
+    }
+
     override val uiState: Flow<LoginUiState>
         get() = stateHandler
             .stateFlow
@@ -25,6 +29,7 @@ internal class LoginViewModel(
             is InputDataState -> LoginUiState(
                 password = state.password,
                 phoneNumber = state.phone,
+                isLoading = state.step == InputDataState.Step.Loading
             )
         }
     }
@@ -33,4 +38,5 @@ internal class LoginViewModel(
 data class LoginUiState(
     val phoneNumber: String = "",
     val password: String = "",
+    val isLoading: Boolean = false,
 )

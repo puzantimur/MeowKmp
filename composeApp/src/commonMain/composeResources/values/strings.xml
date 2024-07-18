@@ -6,4 +6,6 @@
     <string name="login_view_password_hint">Password</string>
     <string name="login_view_button_confirm_text">Confirm</string>
     <string name="login_view_sign_up">Sign Up</string>
+    <string name="homepage_view_tab_woman_title">Women</string>
+    <string name="homepage_view_tab_man_title">Men</string>
 </resources>

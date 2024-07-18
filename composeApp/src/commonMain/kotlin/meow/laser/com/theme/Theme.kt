@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import lightPalette
 
 internal val LocalThemeIsDark = compositionLocalOf { mutableStateOf(true) }
 
@@ -16,11 +15,12 @@ fun MeowTheme(
 ) {
     val systemIsDark = isSystemInDarkTheme()
     val isDarkState = remember { mutableStateOf(systemIsDark) }
+    val palette = if (systemIsDark) darkPalette else lightPalette
     CompositionLocalProvider(
         LocalThemeIsDark provides isDarkState,
-        LocalMeowColors provides lightPalette,
+        LocalMeowColors provides palette,
         content = {
-            Box(modifier = Modifier.fillMaxSize().background(MeowTheme.colors.primaryBackground)) {
+            Box(modifier = Modifier.fillMaxSize().background(MeowTheme.colors.surfaceBright)) {
                 content()
             }
         }

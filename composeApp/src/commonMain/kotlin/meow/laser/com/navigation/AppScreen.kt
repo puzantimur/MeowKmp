@@ -1,7 +1,7 @@
 package meow.laser.com.navigation
 
 enum class AppScreen(val title: String) {
-    Catalog("catalog"),
+    Homepage("homepage"),
     Detail("detail"),
     Login("login"),
     Profile("profile"),
