@@ -1,52 +1,75 @@
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+package meow.laser.com.theme
+
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
-import meow.laser.com.theme.MeowColors
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-val lightPalette = MeowColors(
-    primaryText = Color(0xFF000000),
-    primaryBackground = Color(0xFFCCDED1),
-    primaryButtonColor = Color(0xFF6FA28E),
-    secondaryBackground = Color(0xF2F4836),
-    secondaryText = Color(0xFF5C8A70),
-    secondaryButtonColor = Color(0xFF5C8A70),
-    outlineTextFieldColor = Color(0xFF2B4033)
-)
+val primaryLightHighContrast = Color(0xFF002817)
+val onPrimaryLightHighContrast = Color(0xFFFFFFFF)
+val primaryContainerLightHighContrast = Color(0xFF004D30)
+val onPrimaryContainerLightHighContrast = Color(0xFFFFFFFF)
+val secondaryLightHighContrast = Color(0xFF12261B)
+val onSecondaryLightHighContrast = Color(0xFFFFFFFF)
+val secondaryContainerLightHighContrast = Color(0xFF33473B)
+val onSecondaryContainerLightHighContrast = Color(0xFFFFFFFF)
+val tertiaryLightHighContrast = Color(0xFF2F1F00)
+val onTertiaryLightHighContrast = Color(0xFFFFFFFF)
+val tertiaryContainerLightHighContrast = Color(0xFF593E00)
+val onTertiaryContainerLightHighContrast = Color(0xFFFFFFFF)
+val errorLightHighContrast = Color(0xFF4E0002)
+val onErrorLightHighContrast = Color(0xFFFFFFFF)
+val errorContainerLightHighContrast = Color(0xFF8C0009)
+val onErrorContainerLightHighContrast = Color(0xFFFFFFFF)
+val backgroundLightHighContrast = Color(0xFFF6FBF4)
+val onBackgroundLightHighContrast = Color(0xFF171D19)
+val surfaceLightHighContrast = Color(0xFFF6FBF4)
+val onSurfaceLightHighContrast = Color(0xFF000000)
+val surfaceVariantLightHighContrast = Color(0xFFDCE5DC)
+val onSurfaceVariantLightHighContrast = Color(0xFF1E2620)
+val outlineLightHighContrast = Color(0xFF3C453F)
+val outlineVariantLightHighContrast = Color(0xFF3C453F)
+val scrimLightHighContrast = Color(0xFF000000)
+val inverseSurfaceLightHighContrast = Color(0xFF2C322E)
+val inverseOnSurfaceLightHighContrast = Color(0xFFFFFFFF)
+val inversePrimaryLightHighContrast = Color(0xFFB5FCD1)
+val surfaceDimLightHighContrast = Color(0xFFD6DBD5)
+val surfaceBrightLightHighContrast = Color(0xFFF6FBF4)
+val surfaceContainerLowestLightHighContrast = Color(0xFFFFFFFF)
+val surfaceContainerLowLightHighContrast = Color(0xFFF0F5EE)
+val surfaceContainerLightHighContrast = Color(0xFFEAEFE9)
+val surfaceContainerHighLightHighContrast = Color(0xFFE4EAE3)
+val surfaceContainerHighestLightHighContrast = Color(0xFFDFE4DD)
 
-val darkPalette = MeowColors(
-    primaryText = Color(0xFF43674D),
-    primaryBackground = Color(0xFFFFFFFF),
-    secondaryText = Color(0xFFEAF2EC),
-    secondaryBackground = Color(0xFF6FA17D),
-    secondaryButtonColor = Color(0xFF5C8A70),
-    outlineTextFieldColor = Color(0xFF2B4033),
-    primaryButtonColor = Color(0xFF54C785),
-)
-
-@Preview
-@Composable
-fun PreviewColor() {
-    Column {
-        Box(modifier = Modifier.background(lightPalette.primaryBackground).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(lightPalette.primaryText).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(lightPalette.secondaryBackground).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(lightPalette.secondaryText).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(darkPalette.primaryBackground).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(darkPalette.primaryBackground).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(darkPalette.secondaryBackground).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-        Box(modifier = Modifier.background(darkPalette.secondaryText).height(20.dp).width(20.dp))
-        Spacer(Modifier.padding(10.dp))
-    }
-
-}
+val primaryDarkHighContrast = Color(0xFFEEFFF1)
+val onPrimaryDarkHighContrast = Color(0xFF000000)
+val primaryContainerDarkHighContrast = Color(0xFF95D9B1)
+val onPrimaryContainerDarkHighContrast = Color(0xFF000000)
+val secondaryDarkHighContrast = Color(0xFFEEFFF1)
+val onSecondaryDarkHighContrast = Color(0xFF000000)
+val secondaryContainerDarkHighContrast = Color(0xFFB9D1BF)
+val onSecondaryContainerDarkHighContrast = Color(0xFF000000)
+val tertiaryDarkHighContrast = Color(0xFFFFFAF7)
+val onTertiaryDarkHighContrast = Color(0xFF000000)
+val tertiaryContainerDarkHighContrast = Color(0xFFF2C470)
+val onTertiaryContainerDarkHighContrast = Color(0xFF000000)
+val errorDarkHighContrast = Color(0xFFFFF9F9)
+val onErrorDarkHighContrast = Color(0xFF000000)
+val errorContainerDarkHighContrast = Color(0xFFFFBAB1)
+val onErrorContainerDarkHighContrast = Color(0xFF000000)
+val backgroundDarkHighContrast = Color(0xFF0F1511)
+val onBackgroundDarkHighContrast = Color(0xFFDFE4DD)
+val surfaceDarkHighContrast = Color(0xFF0F1511)
+val onSurfaceDarkHighContrast = Color(0xFFFFFFFF)
+val surfaceVariantDarkHighContrast = Color(0xFF404943)
+val onSurfaceVariantDarkHighContrast = Color(0xFFF4FDF4)
+val outlineDarkHighContrast = Color(0xFFC4CDC5)
+val outlineVariantDarkHighContrast = Color(0xFFC4CDC5)
+val scrimDarkHighContrast = Color(0xFF000000)
+val inverseSurfaceDarkHighContrast = Color(0xFFDFE4DD)
+val inverseOnSurfaceDarkHighContrast = Color(0xFF000000)
+val inversePrimaryDarkHighContrast = Color(0xFF00311D)
+val surfaceDimDarkHighContrast = Color(0xFF0F1511)
+val surfaceBrightDarkHighContrast = Color(0xFF353B36)
+val surfaceContainerLowestDarkHighContrast = Color(0xFF0A0F0C)
+val surfaceContainerLowDarkHighContrast = Color(0xFF171D19)
+val surfaceContainerDarkHighContrast = Color(0xFF1B211D)
+val surfaceContainerHighDarkHighContrast = Color(0xFF262B27)
+val surfaceContainerHighestDarkHighContrast = Color(0xFF303632)

@@ -1,8 +1,14 @@
 package meow.laser.com.theme.components
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import meow.composeapp.generated.resources.Aboreto_Regular
+import meow.composeapp.generated.resources.FjordOne_Regular
+import meow.composeapp.generated.resources.Res
+import org.jetbrains.compose.resources.Font
 
 object TextStyles {
     val bodyL = TextStyle(
@@ -20,7 +26,7 @@ object TextStyles {
     )
     
     val mainTitle = TextStyle(
-        fontSize = 28.sp,
+        fontSize = 32.sp,
         lineHeight = 30.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.06.sp,
@@ -32,4 +38,14 @@ object TextStyles {
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.06.sp,
     )
+}
+
+@Composable
+fun MeowTitleFont(): FontFamily {
+    return FontFamily(Font(Res.font.Aboreto_Regular))
+}
+
+@Composable
+fun MeowBodyFont(): FontFamily {
+    return FontFamily(Font(Res.font.FjordOne_Regular))
 }

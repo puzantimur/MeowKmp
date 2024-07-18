@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import meow.laser.com.features.login.tea.msg.LoginMsg
+import meow.laser.com.navigation.AppScreen
 import meow.laser.com.navigation.LocalNavHost
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
@@ -23,8 +24,17 @@ internal fun LoginScreen(
             onPasswordChanged = {
                 viewModel.sendMsg(LoginMsg.OnInputPassword(it))
             },
-            {},
-            {}
+            onButtonLoginClicked = {
+                viewModel.sendMsg(
+                    LoginMsg.OnConfirmClicked(
+                        phone = viewState.phoneNumber, pass = viewState.password
+                    )
+                )
+            },
+            onButtonCreateAccountClicked = {
+                externalNavHost.navigate(AppScreen.Main.title)
+            },
+            onButtonCloseClick = {}
         ),
         uiState = viewState
     )

@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import meow.laser.com.features.catalog.CatalogScreen
+import meow.laser.com.features.homepage.HomepageScreen
 import meow.laser.com.features.detail.DetailScreen
 import meow.laser.com.features.login.di.loginModule
 import meow.laser.com.features.login.ui.LoginScreen
@@ -50,8 +50,8 @@ internal fun MeowApp(
             composable(route = AppScreen.Main.title) {
                 MainScreen()
             }
-            composable(route = AppScreen.Catalog.title) {
-                CatalogScreen()
+            composable(route = AppScreen.Homepage.title) {
+                HomepageScreen()
             }
             composable(route = AppScreen.Login.title) {
                 LoginScreen()

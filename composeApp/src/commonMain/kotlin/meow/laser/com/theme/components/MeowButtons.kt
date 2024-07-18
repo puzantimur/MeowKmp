@@ -28,7 +28,8 @@ fun MeowButton(
     buttonSize: ButtonSize = ButtonSize.M,
     text: String,
     onButtonClick: () -> Unit,
-    enabled: Boolean = true
+    enabled: Boolean = true,
+    showProgress: Boolean = false,
 ) {
     val buttonColors = buttonColors(type, enabled)
     val buttonHeight: Dp = remember(buttonSize) {
@@ -45,27 +46,36 @@ fun MeowButton(
         colors = buttonColors,
         onClick = { onButtonClick() },
         content = {
-            val renderText: (@Composable () -> Unit) = {
-                Text(
-                    modifier = Modifier,
-                    text = text,
-                    fontWeight = FontWeight.Black,
-                    fontSize = when (buttonSize) {
-                        ButtonSize.L -> 16.sp
-                        ButtonSize.M -> 14.sp
-                        ButtonSize.S -> 16.sp
-                    },
-                    lineHeight = 16.sp,
-                    letterSpacing = 0.4.sp
+            if (showProgress) {
+                Box(
+                    modifier = Modifier.height(height = buttonHeight),
+                    contentAlignment = Alignment.Center,
+                    content = { Spinner(size = SpinnerSize.M) }
+                )
+            } else {
+                val renderText: (@Composable () -> Unit) = {
+                    Text(
+                        modifier = Modifier,
+                        text = text,
+                        fontWeight = FontWeight.Black,
+                        fontSize = when (buttonSize) {
+                            ButtonSize.L -> 16.sp
+                            ButtonSize.M -> 14.sp
+                            ButtonSize.S -> 16.sp
+                        },
+                        lineHeight = 16.sp,
+                        letterSpacing = 0.4.sp,
+                        fontFamily = MeowBodyFont(),
+                    )
+                }
+                Box(
+                    modifier = Modifier.height(height = buttonHeight),
+                    contentAlignment = Alignment.Center,
+                    content = { renderText() }
                 )
             }
-            Box(
-                modifier = Modifier.height(height = buttonHeight),
-                contentAlignment = Alignment.Center,
-                content = { renderText() }
-            )
         },
-        shape = RoundedCornerShape(20.dp)
+        shape = RoundedCornerShape(16.dp)
     )
 }
 
@@ -73,18 +83,18 @@ fun MeowButton(
 private fun buttonColors(type: ButtonType, buttonEnabled: Boolean): ButtonColors {
     val backgroundColor = if (buttonEnabled) {
         when (type) {
-            is ButtonType.Primary -> MeowTheme.colors.primaryButtonColor
-            is ButtonType.Secondary -> MeowTheme.colors.secondaryButtonColor
+            is ButtonType.Primary -> MeowTheme.colors.tertiaryContainer
+            is ButtonType.Secondary -> MeowTheme.colors.primaryContainer
         }
     } else {
         when (type) {
-            is ButtonType.Primary -> MeowTheme.colors.primaryButtonColor.copy(alpha = 0.5f)
-            is ButtonType.Secondary -> MeowTheme.colors.secondaryButtonColor.copy(alpha = 0.5f)
+            is ButtonType.Primary -> MeowTheme.colors.tertiaryContainer.copy(alpha = 0.5f)
+            is ButtonType.Secondary -> MeowTheme.colors.primaryContainer.copy(alpha = 0.5f)
         }
     }
     return ButtonDefaults.outlinedButtonColors().copy(
         containerColor = backgroundColor,
-        contentColor = MeowTheme.colors.primaryText
+        contentColor = MeowTheme.colors.onPrimary
     )
 }
 
