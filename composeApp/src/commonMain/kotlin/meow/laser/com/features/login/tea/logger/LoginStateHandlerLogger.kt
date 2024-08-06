@@ -1,7 +1,6 @@
 package meow.laser.com.features.login.tea.logger
 
-import meow.laser.com.tea.StateHandlerImpl
-import meow.laser.com.tea.StateHandlerLogger
+import meow.laser.com.core.tea.StateHandlerLogger
 import org.koin.core.logger.Logger
 
 internal class LoginStateHandlerLogger(

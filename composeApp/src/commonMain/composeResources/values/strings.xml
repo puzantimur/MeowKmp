@@ -8,4 +8,7 @@
     <string name="login_view_sign_up">Sign Up</string>
     <string name="homepage_view_tab_woman_title">Women</string>
     <string name="homepage_view_tab_man_title">Men</string>
+    <string name="bottom_nav_tab_homepage">Homepage</string>
+    <string name="bottom_nav_tab_profile">Profile</string>
+    <string name="bottom_nav_tab_appointment">Appointment</string>
 </resources>

@@ -1,6 +1,6 @@
 package meow.laser.com.features.login.tea.model
 
-import meow.laser.com.base.network.NetworkFailure
+import meow.laser.com.core.network.utils.NetworkFailure
 
 sealed class AuthInputFailure {
     data class Validation(val failure: LoginValidationFailure) : AuthInputFailure()

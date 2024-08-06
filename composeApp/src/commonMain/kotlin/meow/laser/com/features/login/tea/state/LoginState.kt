@@ -3,8 +3,10 @@ package meow.laser.com.features.login.tea.state
 import meow.laser.com.features.login.tea.model.AuthInputFailure
 
 internal sealed interface LoginState {
-    data object None: LoginState
-    sealed class Progress: LoginState {
+
+    data object None : LoginState
+
+    sealed class Progress : LoginState {
         data class InputDataState(
             val phone: String,
             val password: String,
@@ -20,4 +22,6 @@ internal sealed interface LoginState {
             }
         }
     }
+
+    data object Cancel : LoginState
 }

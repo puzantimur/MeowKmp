@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import meow.laser.com.tea.StateHandler
+import meow.laser.com.core.tea.StateHandler
 
 abstract class BaseViewModel<in State : Any, Msg : Any, out UiState: Any>(
     private val stateHandler: StateHandler<State, Msg>,

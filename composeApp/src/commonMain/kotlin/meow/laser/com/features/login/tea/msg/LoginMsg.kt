@@ -2,20 +2,23 @@ package meow.laser.com.features.login.tea.msg
 
 internal sealed class LoginMsg {
     
-    data object StartAuth: LoginMsg()
+    data object StartAuth : LoginMsg()
 
     data class OnInputPhone(
         val phone: String,
-    ): LoginMsg()
+    ) : LoginMsg()
 
     data class OnInputPassword(
         val pass: String,
-    ): LoginMsg()
+    ) : LoginMsg()
 
-    class OnConfirmClicked(
+    data class OnConfirmClicked(
         val phone: String,
         val pass: String,
-    ): LoginMsg()
+    ) : LoginMsg()
+
+    data object OnCloseClick : LoginMsg()
+
 
 }
 

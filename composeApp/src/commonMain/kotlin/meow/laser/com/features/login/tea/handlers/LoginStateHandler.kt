@@ -5,9 +5,9 @@ import meow.laser.com.features.login.tea.state.LoginState
 import meow.laser.com.features.login.tea.logger.LoginStateHandlerLogger
 import meow.laser.com.features.login.tea.msg.LoginMsg
 import meow.laser.com.features.login.tea.reducer.LoginReducer
-import meow.laser.com.tea.StateHandler
-import meow.laser.com.tea.StateHandlerImpl
-import meow.laser.com.tea.StateHandlerScope
+import meow.laser.com.core.tea.StateHandler
+import meow.laser.com.core.tea.StateHandlerImpl
+import meow.laser.com.core.tea.StateHandlerScope
 
 internal interface LoginStateHandler : StateHandler<LoginState, LoginMsg>
 

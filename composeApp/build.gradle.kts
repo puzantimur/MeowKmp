@@ -61,16 +61,19 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.composeImageLoader)
             implementation(libs.kotlinx.coroutines.core)
-            implementation(libs.ktor.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)
             implementation(libs.multiplatformSettings)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
-
+            implementation(libs.bundles.ktor)
             implementation(libs.compose.navigation)
             implementation(libs.compose.viewmodel)
+            implementation(libs.coil.compose.core)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.mp)
+            implementation(libs.coil.network.ktor)
         }
 
         commonTest.dependencies {
@@ -86,6 +89,7 @@ kotlin {
             implementation(libs.kotlinx.coroutines.android)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.koin.android)
+            implementation(libs.ktor.client.okhttp)
         }
 
         iosMain.dependencies {
