@@ -61,7 +61,12 @@ internal fun LoginView(
     ) {
 
         Image(
-            modifier = Modifier.align(Alignment.End),
+            modifier = Modifier
+                .align(Alignment.End)
+                .clickable {
+                    callbacks.onButtonCloseClick.invoke()
+
+                },
             painter = painterResource(Res.drawable.ic_close),
             contentDescription = null
         )

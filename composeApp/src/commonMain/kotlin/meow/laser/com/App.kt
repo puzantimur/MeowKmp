@@ -1,36 +1,28 @@
 package meow.laser.com
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import meow.laser.com.features.homepage.HomepageScreen
 import meow.laser.com.features.detail.DetailScreen
-import meow.laser.com.features.login.di.loginModule
 import meow.laser.com.features.login.ui.LoginScreen
-import meow.laser.com.features.profile.ProfileScreen
+import meow.laser.com.features.splash.ui.SplashScreen
 import meow.laser.com.navigation.AppScreen
 import meow.laser.com.navigation.LocalNavHost
 import meow.laser.com.navigation.main.MainScreen
 import meow.laser.com.theme.MeowTheme
-import org.koin.compose.KoinApplication
+import org.koin.compose.KoinContext
 
 
 @Composable
 internal fun App() = MeowTheme {
-    KoinApplication(application = {
-        modules(
-            loginModule(),
-
-        )
-
-    }) {
-
+    KoinContext {
+        MeowApp()
     }
-    MeowApp()
 }
 
 @Composable
@@ -45,22 +37,19 @@ internal fun MeowApp(
     ) {
         NavHost(
             navController = navController,
-            startDestination = AppScreen.Login.title
+            startDestination = AppScreen.Splash.title
         ) {
             composable(route = AppScreen.Main.title) {
                 MainScreen()
             }
-            composable(route = AppScreen.Homepage.title) {
-                HomepageScreen()
-            }
             composable(route = AppScreen.Login.title) {
                 LoginScreen()
             }
-            composable(route = AppScreen.Profile.title) {
-                ProfileScreen()
-            }
             composable(route = AppScreen.Detail.title) {
                 DetailScreen()
+            }
+            composable(route = AppScreen.Splash.title) {
+                SplashScreen(navController = navController)
             }
         }
     }

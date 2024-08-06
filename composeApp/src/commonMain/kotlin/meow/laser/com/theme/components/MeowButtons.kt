@@ -83,13 +83,13 @@ fun MeowButton(
 private fun buttonColors(type: ButtonType, buttonEnabled: Boolean): ButtonColors {
     val backgroundColor = if (buttonEnabled) {
         when (type) {
-            is ButtonType.Primary -> MeowTheme.colors.tertiaryContainer
-            is ButtonType.Secondary -> MeowTheme.colors.primaryContainer
+            is ButtonType.Primary -> MeowTheme.colors.primaryContainer
+            is ButtonType.Secondary -> MeowTheme.colors.tertiaryContainer
         }
     } else {
         when (type) {
-            is ButtonType.Primary -> MeowTheme.colors.tertiaryContainer.copy(alpha = 0.5f)
-            is ButtonType.Secondary -> MeowTheme.colors.primaryContainer.copy(alpha = 0.5f)
+            is ButtonType.Primary -> MeowTheme.colors.primaryContainer.copy(alpha = 0.5f)
+            is ButtonType.Secondary -> MeowTheme.colors.tertiaryContainer.copy(alpha = 0.5f)
         }
     }
     return ButtonDefaults.outlinedButtonColors().copy(

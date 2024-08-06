@@ -31,8 +31,13 @@ internal class LoginViewModel(
                 phoneNumber = state.phone,
                 isLoading = state.step == InputDataState.Step.Loading
             )
+            is LoginState.Cancel -> LoginUiState()
         }
     }
+}
+
+sealed class UiEffect {
+    data object CloseLoginFlow : UiEffect()
 }
 
 data class LoginUiState(
